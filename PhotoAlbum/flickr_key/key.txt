@@ -1,0 +1,3 @@
+fkicker API key - a25376b8e0e5d3bdd93d03059b188320
+
+secret - 746d9bcb4231dcfc

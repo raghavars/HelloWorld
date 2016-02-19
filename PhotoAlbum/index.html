@@ -1,0 +1,97 @@
+	<!DOCTYPE HTML>
+	<html>
+	<head>
+		<title>Photo Album</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+		<style>
+			.carousel-inner > .item > img,
+			.carousel-inner > .item > a > img {
+			    /*width: 50%;*/
+			    margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "search_container">
+			<div class = "modal-dialog">
+				<div class = "modal-content">
+					<div class = "modal-header">
+						<h4 class = "modal-title">Photo Album. . . </h4>
+							</div>
+							<div class = "modal-body row"> 
+								<p>
+									<input class = "col-md-8 col-md-offset-1 col-sm-8 col-sm-offset-1 col-xs-8 col-xs-offset-1 search_input" type = "search" placeholder = "Enter Photo Name">
+								</p>
+							</div>
+							<div class = "modal-footer">
+								<div class = "row">
+									<select class = " per_page form-control col-md-offset-6 col-sm-offset-2" style = "width : 30%">
+										<option>20</option>
+										<option>30</option>
+										<option>40</option>
+									</select>
+									<button type = "button" class = "btn btn-primary search_button" style = "margin-top : -9.7%; margin-right: 3%">Search</button>
+								</div>
+							</div>
+					</div>
+				</div>
+			<hr>
+			<div class = "row" style = "margin-left : 4.2%">
+				<ul class = "allimages list-inline"></ul>
+			</div>
+		</div>
+		<div class = "photodata hidden" ></div><div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						      </div>
+						      <div class="modal-body">
+
+						<div id="carousel-photo" class="carousel slide" data-interval="1000" data-ride="carousel" data-pause="hover">
+
+							  <!-- Wrapper for slides -->
+							<div class="carousel-inner" role="document">
+								<div class="item active" id="6">
+									<img class="img_body" src="http://farm2.staticflickr.com/1466/24449751154_3687df2a74.jpg|gif|png" alt="upload">
+								</div>
+							</div>
+
+							  <!-- Controls -->
+							  <a class="left carousel-control" href="#carousel-photo" role="button" data-slide="prev">
+							    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							    <span class="sr-only">Previous</span>
+							  </a>
+							  <a class="right carousel-control" href="#carousel-photo" role="button" data-slide="next">
+							    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							    <span class="sr-only">Next</span>
+							  </a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/template" id = "out_result">
+			<li>
+				<img class = "image img-responsive img-rounded" id=<%= data_id%> src = <%= url%> style = "width : 300px; height : 150px;" alt=<%= title%>>
+			</li>
+		</script>
+		<script type="text/template" id = "carousel_template">
+			<div class="item" id = <%= data_id%> >
+				<img class = "img_body" src= <%= url%> alt= <%= title%> >
+			</div>
+		</script>
+		
+		<script type="text/javascript" src =  "javascript/jquery.min.js"></script>
+		<script type="text/javascript" src = "javascript/bootstrap.min.js"></script>
+		<script type="text/javascript" src =  "javascript/underscore.js"></script>
+		<script type="text/javascript" src = "javascript/backbone.js"></script>
+		<script type="text/javascript" src = "javascript/models/photoModel.js"></script>
+		<script type="text/javascript" src = "javascript/collections/PhotoDataCollection.js"></script>
+		<script type="text/javascript" src = "javascript/views/searchBoxView.js"></script>
+		<script type="text/javascript" src = "javascript/views/photoAlbumView.js"></script>
+		<script type="text/javascript" src = "javascript/app.js"></script>
+	</body>
+	</html>
